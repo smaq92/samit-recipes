@@ -1,5 +1,4 @@
 <?php
-// inc/cpt-recipe.php
 add_action('init', function () {
   register_post_type('recipe', [
     'labels' => [
