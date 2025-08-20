@@ -188,3 +188,21 @@ require get_template_directory() . '/inc/cpt-recipe.php';
 
 require get_template_directory() . '/inc/taxonomies.php';
 
+/**
+ * Tax Filter Behavior
+ */
+
+
+add_action('pre_get_posts', function ($q) {
+  if (!is_admin() && $q->is_main_query() && is_post_type_archive('recipe')) {
+    foreach (['cuisine','diet'] as $tax) {
+      if (!empty($_GET[$tax]) && ($term = (int) $_GET[$tax])) {
+        $q->set('tax_query', [[
+          'taxonomy' => $tax,
+          'field' => 'term_id',
+          'terms' => $term,
+        ]]);
+      }
+    }
+  }
+});
