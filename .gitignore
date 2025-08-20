@@ -1,0 +1,25 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Build artifacts
+*.map
+*.zip
+.DS_Store
+
+# WordPress core
+wp-admin/
+wp-includes/
+
+# WordPress uploads (only ignore if you don’t want images in repo)
+wp-content/uploads/
+
+# OS
+Thumbs.db
+ehthumbs.db
+Icon?
+
+./history
