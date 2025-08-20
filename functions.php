@@ -176,3 +176,15 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Load Recipe Custom Post Type 
+ */
+
+require get_template_directory() . '/inc/cpt-recipe.php';
+
+/**
+ * Load Recipe Taxonomies 
+ */
+
+require get_template_directory() . '/inc/taxonomies.php';
+
